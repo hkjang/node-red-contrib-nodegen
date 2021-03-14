@@ -14,6 +14,7 @@ module.exports = function (RED) {
     this.color = config.color || "";
     this.dst = config.dst || "";
     this.lang = config.lang || "";
+    this.template = config.template || "";
     this.on('input', function(msg) {
       var data = {};
       data.prefix = self.prefix || msg.prefix;
@@ -26,6 +27,7 @@ module.exports = function (RED) {
       data.color = self.color || msg.color;
       data.dst = self.dst || msg.dst;
       data.lang = self.lang || msg.lang;
+      data.template = self.template || msg.template;
 
       var options = {};
       var promise;

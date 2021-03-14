@@ -1,15 +1,3 @@
-// var data = {
-//   prefix: 'node-red-contrib-',
-//   name: 'test-module',
-//   module: '',
-//   version: '1.0.0',
-//   keywords: 'test-module',
-//   category: '',
-//   icon: '',
-//   color: '',
-//   dst: '' || '.',
-//   lang: ''
-// };
 <script type="text/javascript">
     RED.nodes.registerType('nodegen',{
         category: 'function',
@@ -24,6 +12,7 @@
             color: {value:"", required:false},
             dst: {value:"", required:false},
             lang: {value:"", required:false},
+            template: {value:"", required:false},
             name: {value: "nodegen"}
         },
         color: '#FFFFFF',
@@ -39,43 +28,47 @@
 <script type="text/x-red" data-template-name="nodegen">
     <div class="form-row">
         <label for="node-input-prefix"><i class="fa fa-prefix"></i>prefix</label>
-        <input type="text" id="node-input-prefix" placeholder="prefix">
+        <input type="text" id="node-input-prefix" placeholder="Prefix of npm module (default: node-red-contrib-)">
     </div>
     <div class="form-row">
         <label for="node-input-fname"><i class="fa fa-fname"></i>fname</label>
-        <input type="text" id="node-input-fname" placeholder="fname">
+        <input type="text" id="node-input-fname" placeholder="Node name (default: name defined in source)">
     </div>
     <div class="form-row">
         <label for="node-input-module"><i class="fa fa-module"></i>module</label>
-        <input type="text" id="node-input-module" placeholder="module">
+        <input type="text" id="node-input-module" placeholder="Module name (default: node-red-contrib-<node name>)">
     </div>
-        <div class="form-row">
+    <div class="form-row">
         <label for="node-input-version"><i class="fa fa-version"></i>version</label>
-        <input type="text" id="node-input-version" placeholder="version">
+        <input type="text" id="node-input-version" placeholder="Node version (format: number.number.number like 4.5.1)">
     </div>
-        <div class="form-row">
+    <div class="form-row">
         <label for="node-input-keywords"><i class="fa fa-keywords"></i>keywords</label>
-        <input type="text" id="node-input-keywords" placeholder="keywords">
+        <input type="text" id="node-input-keywords" placeholder="Additional keywords (format: comma separated string, default: node-red-nodegen)">
     </div>
-        <div class="form-row">
+    <div class="form-row">
         <label for="node-input-category"><i class="fa fa-category"></i>category</label>
-        <input type="text" id="node-input-category" placeholder="category">
+        <input type="text" id="node-input-category" placeholder="Node category (default: function)">
     </div>
-        <div class="form-row">
+    <div class="form-row">
         <label for="node-input-icon"><i class="fa fa-icon"></i>icon</label>
-        <input type="text" id="node-input-icon" placeholder="icon">
+        <input type="text" id="node-input-icon" placeholder="PNG file for node appearance (image size should be 10x20)">
     </div>
-            <div class="form-row">
+    <div class="form-row">
         <label for="node-input-color"><i class="fa fa-color"></i>color</label>
-        <input type="text" id="node-input-color" placeholder="color">
+        <input type="text" id="node-input-color" placeholder="Color for node appearance (format: color hexadecimal numbers like A6BBCF)">
     </div>
-            <div class="form-row">
+    <div class="form-row">
         <label for="node-input-dst"><i class="fa fa-dst"></i>dst</label>
-        <input type="text" id="node-input-dst" placeholder="dst">
+        <input type="text" id="node-input-dst" placeholder="Destination folder to be created (default: node-red execution location)">
     </div>
-            <div class="form-row">
+    <div class="form-row">
         <label for="node-input-lang"><i class="fa fa-lang"></i>lang</label>
-        <input type="text" id="node-input-lang" placeholder="lang">
+        <input type="text" id="node-input-lang" placeholder="Language negotiation information when retrieve a Thing Description">
+    </div>
+    <div class="form-row">
+        <label for="node-input-template"><i class="fa fa-template"></i>template</label>
+        <input type="text" id="node-input-template" placeholder="Template folder location required to create (default: $HOME/.node-red/node_modules/node-red-contrib-nodegen/templates)">
     </div>
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
@@ -84,6 +77,7 @@
 </script>
 
 <script type="text/x-red" data-help-name="nodegen">
-    <p> <b>msg.prefix, fname, module, etc..</b></p>
     <p> make function node for node-red </p>
+    <p> <b>msg.prefix, fname, module, etc..</b></p>
+    <p> Let's check the input box placeholder </p>
 </script>
