@@ -1,0 +1,89 @@
+// var data = {
+//   prefix: 'node-red-contrib-',
+//   name: 'test-module',
+//   module: '',
+//   version: '1.0.0',
+//   keywords: 'test-module',
+//   category: '',
+//   icon: '',
+//   color: '',
+//   dst: '' || '.',
+//   lang: ''
+// };
+<script type="text/javascript">
+    RED.nodes.registerType('nodegen',{
+        category: 'function',
+        defaults: {
+            prefix: {value:"", required:false},
+            fname: {value:"", required:false},
+            module: {value:"", required:false},
+            version: {value:"", required:false},
+            keywords: {value:"", required:false},
+            category: {value:"", required:false},
+            icon: {value:"", required:false},
+            color: {value:"", required:false},
+            dst: {value:"", required:false},
+            lang: {value:"", required:false},
+            name: {value: "nodegen"}
+        },
+        color: '#FFFFFF',
+        inputs:1,
+        outputs:1,
+        icon: "nodegen.png",
+        label: function() {
+            return this.name || "nodegen";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="nodegen">
+    <div class="form-row">
+        <label for="node-input-prefix"><i class="fa fa-prefix"></i>prefix</label>
+        <input type="text" id="node-input-prefix" placeholder="prefix">
+    </div>
+    <div class="form-row">
+        <label for="node-input-fname"><i class="fa fa-fname"></i>fname</label>
+        <input type="text" id="node-input-fname" placeholder="fname">
+    </div>
+    <div class="form-row">
+        <label for="node-input-module"><i class="fa fa-module"></i>module</label>
+        <input type="text" id="node-input-module" placeholder="module">
+    </div>
+        <div class="form-row">
+        <label for="node-input-version"><i class="fa fa-version"></i>version</label>
+        <input type="text" id="node-input-version" placeholder="version">
+    </div>
+        <div class="form-row">
+        <label for="node-input-keywords"><i class="fa fa-keywords"></i>keywords</label>
+        <input type="text" id="node-input-keywords" placeholder="keywords">
+    </div>
+        <div class="form-row">
+        <label for="node-input-category"><i class="fa fa-category"></i>category</label>
+        <input type="text" id="node-input-category" placeholder="category">
+    </div>
+        <div class="form-row">
+        <label for="node-input-icon"><i class="fa fa-icon"></i>icon</label>
+        <input type="text" id="node-input-icon" placeholder="icon">
+    </div>
+            <div class="form-row">
+        <label for="node-input-color"><i class="fa fa-color"></i>color</label>
+        <input type="text" id="node-input-color" placeholder="color">
+    </div>
+            <div class="form-row">
+        <label for="node-input-dst"><i class="fa fa-dst"></i>dst</label>
+        <input type="text" id="node-input-dst" placeholder="dst">
+    </div>
+            <div class="form-row">
+        <label for="node-input-lang"><i class="fa fa-lang"></i>lang</label>
+        <input type="text" id="node-input-lang" placeholder="lang">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="nodegen">
+    <p> <b>msg.prefix, fname, module, etc..</b></p>
+    <p> make function node for node-red </p>
+</script>
