@@ -26,19 +26,22 @@ Example
 ```javascript
 msg = {};
 msg.prefix = 'node-red-contrib-';
-msg.fname = 'test-module';
+msg.fname = 'lower-case';
 msg.module = '';
 msg.version = '1.0.0';
-msg.keywords = 'test-module';
+msg.keywords = 'lower-case';
 msg.category = '';
 msg.icon = '';
 msg.color = '';
-msg.dst = '' || '.';
-msg.lang = ''
-msg.content = '// name: lower-case\n'
-msg.content += '// outputs: 1\n'
-msg.content += 'msg.payload = msg.payload.toLowerCase();\n'
-msg.content += 'return msg;\n'
+// if OS is linux, MAC
+msg.dst = '$HOME/.node-red/node_modules/';
+// if OS is Window
+msg.dst = 'C:/Users/gagag/.node-red/node_modules/';
+msg.lang = '';
+msg.content = '// name: lower-case\n';
+msg.content += '// outputs: 1\n';
+msg.content += 'msg.payload = msg.payload.toLowerCase();\n';
+msg.content += 'return msg;\n';
 
 return msg;
 ```
