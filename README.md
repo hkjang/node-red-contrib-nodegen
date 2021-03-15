@@ -23,6 +23,19 @@ Example
 ------
 ### Parameters
 
+- prefix : Prefix of npm module (default: "node-red-contrib-")
+- fname : Node name (default: name defined in source)
+- module : Module name (default: "node-red-contrib-<node name>")
+- version : Node version (format: "number.number.number" like "4.5.1")
+- keywords : Additional keywords (format: comma separated string, default: "node-red-nodegen")
+- category : Node category (default: "function")
+- icon : PNG file for node appearance (image size should be 10x20)
+- color : Color for node appearance (format: color hexadecimal numbers like "A6BBCF")
+- dst : Destination folder to be created (default: node-red execution location)
+- template : Template folder location required to create (default: /home/server/.node-red/node_modules/node-red-contrib-nodegen/templates/function
+- lang : Language negotiation information when retrieve a Thing Description
+- content : function contents 
+
 ```javascript
 msg = {};
 msg.prefix = 'node-red-contrib-';
