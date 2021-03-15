@@ -56,32 +56,9 @@ Sample Flow
 ```json
 [
   {
-    "id": "6bedc977.bd2228",
-    "type": "nodegen",
-    "z": "66670ffc.769f2",
-    "prefix": "",
-    "fname": "",
-    "module": "",
-    "version": "",
-    "keywords": "",
-    "category": "",
-    "icon": "",
-    "color": "",
-    "dst": "",
-    "lang": "",
-    "name": "nodegen",
-    "x": 520,
-    "y": 240,
-    "wires": [
-      [
-        "e0fead51.4e652"
-      ]
-    ]
-  },
-  {
-    "id": "9d48e0f8.ce17",
+    "id": "6d3e3068.04443",
     "type": "inject",
-    "z": "66670ffc.769f2",
+    "z": "c49414ec.9c4508",
     "name": "",
     "props": [
       {
@@ -99,36 +76,36 @@ Sample Flow
     "topic": "",
     "payload": "",
     "payloadType": "date",
-    "x": 160,
-    "y": 240,
+    "x": 130,
+    "y": 60,
     "wires": [
       [
-        "d521d847.33f398"
+        "fa546363.caa9f"
       ]
     ]
   },
   {
-    "id": "d521d847.33f398",
+    "id": "fa546363.caa9f",
     "type": "function",
-    "z": "66670ffc.769f2",
+    "z": "c49414ec.9c4508",
     "name": "",
-    "func": "msg = {};\nmsg.prefix = 'node-red-contrib-';\nmsg.fname = 'test-module';\nmsg.module = '';\nmsg.version = '1.0.0';\nmsg.keywords = 'test-module';\nmsg.category = '';\nmsg.icon = '';\nmsg.color = '';\nmsg.dst = '' || '.';\nmsg.lang = ''\nmsg.content = '// name: lower-case\\n'\nmsg.content += '// outputs: 1\\n'\nmsg.content += 'msg.payload = msg.payload.toLowerCase();\\n'\nmsg.content += 'return msg;\\n'\n\nreturn msg;\n",
+    "func": "msg = {};\nmsg.prefix = 'node-red-contrib-';\nmsg.fname = 'lower-case';\nmsg.module = '';\nmsg.version = '1.0.0';\nmsg.keywords = 'lower-case';\nmsg.category = '';\nmsg.icon = '';\nmsg.color = '';\n// if OS is linux, MAC\nmsg.dst = '/home/server/.node-red/node_modules/';\n// if OS is Window\n// msg.dst = 'C:/Users/user/.node-red/node_modules/';\nmsg.lang = '';\nmsg.content = '// name: lower-case\\n';\nmsg.content += '// outputs: 1\\n';\nmsg.content += 'msg.payload = msg.payload.toLowerCase();\\n';\nmsg.content += 'return msg;\\n';\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
-    "x": 340,
-    "y": 240,
+    "x": 310,
+    "y": 60,
     "wires": [
       [
-        "6bedc977.bd2228"
+        "268809eb.cbceb6"
       ]
     ]
   },
   {
-    "id": "e0fead51.4e652",
+    "id": "fa48932.8d7ee7",
     "type": "debug",
-    "z": "66670ffc.769f2",
+    "z": "c49414ec.9c4508",
     "name": "",
     "active": true,
     "tosidebar": true,
@@ -138,9 +115,32 @@ Sample Flow
     "targetType": "full",
     "statusVal": "",
     "statusType": "auto",
-    "x": 670,
-    "y": 240,
+    "x": 640,
+    "y": 60,
     "wires": []
+  },
+  {
+    "id": "268809eb.cbceb6",
+    "type": "nodegen",
+    "z": "c49414ec.9c4508",
+    "prefix": "",
+    "fname": "",
+    "module": "",
+    "version": "",
+    "keywords": "",
+    "category": "",
+    "icon": "",
+    "color": "",
+    "dst": "",
+    "lang": "",
+    "name": "nodegen",
+    "x": 490,
+    "y": 60,
+    "wires": [
+      [
+        "fa48932.8d7ee7"
+      ]
+    ]
   }
 ]
 
