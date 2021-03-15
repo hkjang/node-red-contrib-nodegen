@@ -21,6 +21,8 @@ The ‘Install’ tab lets you search the catalogue of available node modules an
 
 Example
 ------
+https://flows.nodered.org/add/node
+
 ### Parameters
 
 - prefix : Prefix of npm module (default: "node-red-contrib-")
